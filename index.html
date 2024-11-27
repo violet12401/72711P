@@ -266,39 +266,34 @@
     <script>
             
             document.addEventListener('DOMContentLoaded', () => {
-                const nightModeCheckbox = document.getElementById('night-mode-checkbox');
-                const nightModeIcon = document.querySelector('.checkbox-wrapper-2 img');
-                const logo = document.querySelector('.logo'); // Select the logo image
+              const nightModeCheckbox = document.getElementById('night-mode-checkbox');
+              const nightModeIcon = document.querySelector('.checkbox-wrapper-2 img');
+              const logo = document.querySelector('.logo'); // Select the logo image
 
-                const updateIconAndLogo = () => {
-                    if (nightModeCheckbox.checked) {
-                        nightModeIcon.src = 'image_assets/night_day.png';
-                        logo.src = 'image_assets/logo_white.png'; // Change to white logo
-                    } else {
-                        nightModeIcon.src = 'image_assets/day_night.png';
-                        logo.src = 'image_assets/logo_black.png'; // Change to black logo
-                    }
-                };
+              const updateIconAndLogo = () => {
+                  if (nightModeCheckbox.checked) {
+                      nightModeIcon.src = 'image_assets/night_day.png';
+                      logo.src = 'image_assets/logo_white.png'; // Change to white logo
+                  } else {
+                      nightModeIcon.src = 'image_assets/day_night.png';
+                      logo.src = 'image_assets/logo_black.png'; // Change to black logo
+                  }
+              };
 
-                nightModeCheckbox.addEventListener('change', () => {
-                    document.body.classList.toggle('night-mode', nightModeCheckbox.checked);
-                    updateIconAndLogo();
-                });
+              nightModeCheckbox.addEventListener('change', () => {
+                  document.body.classList.toggle('night-mode', nightModeCheckbox.checked);
+                  updateIconAndLogo();
+                  localStorage.setItem('nightMode', nightModeCheckbox.checked);
+              });
 
-                // Check local storage for night mode setting
-                if (localStorage.getItem('nightMode') === 'true') {
-                    nightModeCheckbox.checked = true;
-                    document.body.classList.add('night-mode');
-                }
+              // Check local storage for night mode setting
+              if (localStorage.getItem('nightMode') === 'true') {
+                  nightModeCheckbox.checked = true;
+                  document.body.classList.add('night-mode');
+              }
 
-                updateIconAndLogo();
-
-                nightModeCheckbox.addEventListener('change', () => {
-                    document.body.classList.toggle('night-mode', nightModeCheckbox.checked);
-                    localStorage.setItem('nightMode', nightModeCheckbox.checked);
-                    updateIconAndLogo();
-                });
-            });
+              updateIconAndLogo();
+          });
     </script>
 
 </body>
