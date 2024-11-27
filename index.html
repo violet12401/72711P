@@ -258,57 +258,48 @@
         <h2>SIGMA CUBED</h2>
     </header><br>
     <div style="margin-left: 30px;">
-        <img src="image_assets/logo_black.png" alt="image_assets/logo_black.png" width = "500" length = "500" style="float: left;"> 
+        <img class="logo" src="image_assets/logo_black.png" alt="image_assets/logo_black.png" width = "500" length = "500" style="float: left;"> 
         <p style="width: 1400px;">Hi, we are 72711P, Sigma Cubed, a third year team competing in the high school level of VRC. Three of our members have competed on this team for the past 2 seasons, and we have one new member this year. Robotics is our passion, and our goal is to have fun competing while improving our engineering and programming skills to help us in whatever we pursue in the future.</p>
     </div>
-    <float>
-        
-    </float>
-    
-
-
-    
-
     
     <!-- Night Mode -->
     <script>
-        <div style="margin-left: 30px;">
-        <img src="image_assets/logo_black.png" alt="image_assets/logo_white.png" width = "500" length = "500" style="float: left;"> 
             
-        document.addEventListener('DOMContentLoaded', () => {
-            const nightModeCheckbox = document.getElementById('night-mode-checkbox');
-            const nightModeIcon = document.querySelector('.checkbox-wrapper-2 img');
-    
-            const updateIcon = () => {
-                if (nightModeCheckbox.checked) {
-                    nightModeIcon.src = 'image_assets/night_day.png';
-                } else {
-                    nightModeIcon.src = 'image_assets/day_night.png';
-                }
-            };
-    
-            nightModeCheckbox.addEventListener('change', () => {
-                document.body.classList.toggle('night-mode', nightModeCheckbox.checked);
-                updateIcon();
-            });
-    
-            // Check local storage for night mode setting
-            if (localStorage.getItem('nightMode') === 'true') {
-                nightModeCheckbox.checked = true;
-                document.body.classList.add('night-mode');
-            }
-    
-            updateIcon();
-    
-            nightModeCheckbox.addEventListener('change', () => {
-                document.body.classList.toggle('night-mode', nightModeCheckbox.checked);
-                localStorage.setItem('nightMode', nightModeCheckbox.checked);
-                updateIcon();
-            });
-        });
-    </script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const nightModeCheckbox = document.getElementById('night-mode-checkbox');
+                const nightModeIcon = document.querySelector('.checkbox-wrapper-2 img');
+                const logo = document.querySelector('.logo'); // Select the logo image
 
-   
+                const updateIconAndLogo = () => {
+                    if (nightModeCheckbox.checked) {
+                        nightModeIcon.src = 'image_assets/night_day.png';
+                        logo.src = 'image_assets/logo_white.png'; // Change to white logo
+                    } else {
+                        nightModeIcon.src = 'image_assets/day_night.png';
+                        logo.src = 'image_assets/logo_black.png'; // Change to black logo
+                    }
+                };
+
+                nightModeCheckbox.addEventListener('change', () => {
+                    document.body.classList.toggle('night-mode', nightModeCheckbox.checked);
+                    updateIconAndLogo();
+                });
+
+                // Check local storage for night mode setting
+                if (localStorage.getItem('nightMode') === 'true') {
+                    nightModeCheckbox.checked = true;
+                    document.body.classList.add('night-mode');
+                }
+
+                updateIconAndLogo();
+
+                nightModeCheckbox.addEventListener('change', () => {
+                    document.body.classList.toggle('night-mode', nightModeCheckbox.checked);
+                    localStorage.setItem('nightMode', nightModeCheckbox.checked);
+                    updateIconAndLogo();
+                });
+            });
+    </script>
 
 </body>
 </html>
