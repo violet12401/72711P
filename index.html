@@ -272,8 +272,6 @@
     
     <!-- Night Mode -->
     <script>
-        <div style="margin-left: 30px;">
-        <img src="image_assets/logo_black.png" alt="image_assets/logo_white.png" width = "500" length = "500" style="float: left;"> 
             
         document.addEventListener('DOMContentLoaded', () => {
             const nightModeCheckbox = document.getElementById('night-mode-checkbox');
@@ -286,7 +284,10 @@
                     nightModeIcon.src = 'image_assets/day_night.png';
                 }
             };
-    
+
+            <div style="margin-left: 30px;">
+        <img src="image_assets/logo_black.png" alt="image_assets/logo_white.png" width = "500" length = "500" style="float: left;"> 
+            
             nightModeCheckbox.addEventListener('change', () => {
                 document.body.classList.toggle('night-mode', nightModeCheckbox.checked);
                 updateIcon();
@@ -304,6 +305,7 @@
                 document.body.classList.toggle('night-mode', nightModeCheckbox.checked);
                 localStorage.setItem('nightMode', nightModeCheckbox.checked);
                 updateIcon();
+                
             });
         });
     </script>
