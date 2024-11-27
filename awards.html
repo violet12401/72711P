@@ -1,1 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css">
+
+    <!-- jQuery and Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"></script>
+    
+
+    <title>72711P Holy Guacamole</title>
+
+    <!-- Tables and Content Formatting -->
+    <style>
+
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow-y: auto;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            scrollbar-width: none;
+        }
+
+        body {
+            padding-top: env(safe-area-inset-top);
+            padding-bottom: env(safe-area-inset-bottom);
+        }
+
+        header {
+            text-align: center;
+            width: 100%;
+            padding-top: 1rem;
+            padding-bottom: 1px;
+            background-color: rgba(173, 173, 173, 0.1);
+        }
+
+    </style>
+
+    <!-- Nav Bar Formatting -->
+    <style>   
+
+        nav.navbar {
+            display: flex;
+            width: 100%;
+            font-size: 14px;
+            justify-content: space-between;
+        }
+
+        .navbar {
+            background-image: linear-gradient(90deg, rgba(255, 255, 255, 0.1), rgba(23, 23, 23, 0.1));
+        }
+
+        .navbar-toggler {
+            border: none;
+            outline: none;
+        }
+
+        .navbar-toggler:hover {
+            border: none;
+            outline: none;
+            background-color: rgba(50,100,200,0.25);
+        }
+
+        .navbar-toggler:focus {
+            border: none;
+            outline: none;
+        }
+
+        @media (max-width: 100%) {
+            body {
+                padding: 10px;
+            }
+            header {
+                margin-top: 5px;
+                padding: 0 5px;
+            }
+        }
+
+        .navbar-nav {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            justify-content: center;
+        }
+
+    </style>
+
+    <!-- Night Mode Formatting -->
+    <style>
+
+        :root {
+            --bg-color-day: #fff;
+            --text-color-day: #000;
+            --bg-color-night: #232323;
+            --text-color-night: #fff;
+        }
+
+        body {
+            background-color: var(--bg-color-day);
+            color: var(--text-color-day);
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        body.night-mode {
+            background-color: var(--bg-color-night);
+            color: var(--text-color-night);
+        }
+
+    </style>
+
+    <!-- Night Mode Toggle Button Formatting -->
+    <style>
+
+        .checkbox-wrapper-2 .ikxBAC {
+            appearance: none;
+            background-color: #dfe1e4;
+            border-radius: 72px;
+            border-style: none;
+            flex-shrink: 0;
+            height: 20px;
+            margin: 0;
+            position: relative;
+            width: 30px;
+        }
+        
+        .checkbox-wrapper-2 .ikxBAC::before {
+            bottom: -6px;
+            content: "";
+            left: -6px;
+            position: absolute;
+            right: -6px;
+            top: -6px;
+        }
+        
+        .checkbox-wrapper-2 .ikxBAC,
+        .checkbox-wrapper-2 .ikxBAC::after {
+            transition: all 100ms ease-out;
+        }
+        
+        .checkbox-wrapper-2 .ikxBAC::after {
+            background-color: #fff;
+            border-radius: 50%;
+            content: "";
+            height: 14px;
+            left: 3px;
+            position: absolute;
+            top: 3px;
+            width: 14px;
+        }
+        
+        .checkbox-wrapper-2 input[type=checkbox] {
+            cursor: default;
+        }
+        
+        .checkbox-wrapper-2 .ikxBAC:hover {
+            background-color: #cacaca;
+            transition-duration: 0s;
+        }
+        
+        .checkbox-wrapper-2 .ikxBAC:checked {
+            background-color: #333;
+        }
+        
+        .checkbox-wrapper-2 .ikxBAC:checked::after {
+            background-color: #fff;
+            left: 13px;
+        }
+        
+        .checkbox-wrapper-2 :focus:not(.focus-visible) {
+            outline: 0;
+        }
+        
+        .checkbox-wrapper-2 .ikxBAC:checked:hover {
+            background-color: #333;
+        }
+
+        .checkbox-wrapper-2 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+    </style>
+
+    <!-- Night Mode Nav Bar Formatting -->
+    <style>
+        :root {
+            --toggler-icon-day: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba%280, 0, 0, 0.5%29' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+            --toggler-icon-night: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba%28255, 255, 255, 1%29' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+        }
+
+        .navbar-toggler-icon {
+            background-image: var(--toggler-icon-day);
+            transition: background-image 0.3s;
+        }
+
+        body.night-mode .navbar-toggler-icon {
+            background-image: var(--toggler-icon-night);
+        }
+
+        body.night-mode .navbar-toggler-icon {
+            border-color: #dfe1e4;
+        }
+
+        body.night-mode .navbar-nav .nav-link {
+            color: var(--text-color-night);
+        }
+
+        body.night-mode .navbar-nav .nav-link.active {
+            color: rgba(155,155,155);
+        }
+
+        body.night-mode .navbar-nav .nav-link:hover {
+            color: rgb(125,125,125);
+        }
+    </style>
+
+    
+</head>
+
+<body>
+
+    <!-- Nav Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-item nav-link active" href="index.html">About the Team<span class="sr-only">(current)</span></a>
+                    <a class="nav-item nav-link" style="pointer-events: none;" href="">Our Robot</a>
+                    <a class="nav-item nav-link active" href="awards.html">Awards</a><span class="sr-only">(current)</span></a>
+                    <a class="nav-item nav-link" style="pointer-events: none;" href="">Reveals & Recaps</a>
+                </div>
+                <!-- Night Mode Toggle -->
+                <div class="checkbox-wrapper-2 ml-auto"> <!-- ml-auto will push it to the right -->
+                    <label for="night-mode-checkbox">
+                        <img id="night-mode-icon" src="image_assets/day_night.png" alt="Night Mode" style="width: 50px; height: auto;">
+                    </label>
+                    <input type="checkbox" class="sc-gJwTLC ikxBAC" id="night-mode-checkbox">
+                </div>
+            </div>
+        </div>
+    </nav>    
+
+    <!-- Text Body -->
+    <header>
+        <h2>AWARDS</h2>
+    </header><br>
+    <div style="margin-left: 30px;">
+        <img class="logo" src="image_assets/logo_black.png" alt="image_assets/logo_black.png" width = "500" length = "500" style="float: left;"> 
+        <p style="width: 1400px;">Think at States</p>
+    </div>
+    
+    <!-- Night Mode -->
+    <script>
+            
+            document.addEventListener('DOMContentLoaded', () => {
+              const nightModeCheckbox = document.getElementById('night-mode-checkbox');
+              const nightModeIcon = document.querySelector('.checkbox-wrapper-2 img');
+              const logo = document.querySelector('.logo'); // Select the logo image
+
+              const updateIconAndLogo = () => {
+                  if (nightModeCheckbox.checked) {
+                      nightModeIcon.src = 'image_assets/night_day.png';
+                      logo.src = 'image_assets/logo_white.png'; // Change to white logo
+                  } else {
+                      nightModeIcon.src = 'image_assets/day_night.png';
+                      logo.src = 'image_assets/logo_black.png'; // Change to black logo
+                  }
+              };
+
+              nightModeCheckbox.addEventListener('change', () => {
+                  document.body.classList.toggle('night-mode', nightModeCheckbox.checked);
+                  updateIconAndLogo();
+                  localStorage.setItem('nightMode', nightModeCheckbox.checked);
+              });
+
+              // Check local storage for night mode setting
+              if (localStorage.getItem('nightMode') === 'true') {
+                  nightModeCheckbox.checked = true;
+                  document.body.classList.add('night-mode');
+              }
+
+              updateIconAndLogo();
+          });
+    </script>
+
+</body>
+</html>
