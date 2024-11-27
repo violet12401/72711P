@@ -259,7 +259,7 @@
     </header><br>
     </header><br>
     <div style="margin-left: 30px;" style="margin-right: 30px;"> 
-        <img class="logo" src="image_assets/ouworldsbot.png" alt="image_assets/ouworldsbot.png" width = "500" length = "500" style="float: left;"> 
+        <img class="logo" src="image_assets/ourobotwhite.png" alt="image_assets/ourobottrans.png" width = "500" length = "500" style="float: left;"> 
 
     </div>
     
@@ -274,8 +274,10 @@
               const updateIconAndLogo = () => {
                   if (nightModeCheckbox.checked) {
                       nightModeIcon.src = 'image_assets/night_day.png';
+                      logo.src = 'image_assets/ourobotwhite'; // Change to white logo
                   } else {
                       nightModeIcon.src = 'image_assets/day_night.png';
+                      logo.src = 'image_assets/ourobottrans'; // Change to black logo
                   }
               };
 
